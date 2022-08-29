@@ -26,8 +26,15 @@ class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Image
-        fields = ['id', 'caption', 'url', 'user', 'comments',
-                  'like_count',  'file', 'liked']
+        fields = ['id',
+                  'caption',
+                  'url',
+                  'user',
+                  'comments',
+                  'like_count',
+                  'file',
+                  'liked'
+                  ]
 
     def has_like(self, obj):
         if isinstance(self.context['request'].user, AnonymousUser):
